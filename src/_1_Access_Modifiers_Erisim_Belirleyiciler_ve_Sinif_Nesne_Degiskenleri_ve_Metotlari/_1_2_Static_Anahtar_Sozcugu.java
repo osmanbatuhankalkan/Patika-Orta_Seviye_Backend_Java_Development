@@ -1,0 +1,4 @@
+package _1_Access_Modifiers_Erisim_Belirleyiciler_ve_Sinif_Nesne_Degiskenleri_ve_Metotlari;
+
+public class _1_2_Static_Anahtar_Sozcugu {
+}
