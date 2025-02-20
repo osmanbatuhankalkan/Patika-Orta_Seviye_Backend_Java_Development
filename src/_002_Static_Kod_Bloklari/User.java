@@ -1,4 +1,4 @@
-package _002_Static_Anahtar_Sozcugu;
+package _002_Static_Kod_Bloklari;
 
 public class User {
     public String name;
