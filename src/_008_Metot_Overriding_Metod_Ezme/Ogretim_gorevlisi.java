@@ -24,4 +24,7 @@ public class Ogretim_gorevlisi extends Akademisyen {
         System.out.println("Hatırlatma"+getAdSoyad()+"Adli Öğretim Görevlimiz Lütfen Sınavları belirtilen Tarih aralığında Sınav yapar.");//**DİKKAT=Fark ettiysek bu sınıfta yaratılan fieldlara doğrudan erişebiliyoruz.
         //Fakat üst sınıftan aldığımız fieldlar encapsule edildiği için onları methot olarak çağırabiliyoruz.Extends etmesek method olarakta çağıramazdık.
     }
+    public void giris(String girisSaati){
+        System.out.println("Ogretim_gorevlisi sınıfından gelen Override: "+this.getAdSoyad()+" Adlı Akademisyen C kasından Giriş Yapmıştır!");
+    }
 }

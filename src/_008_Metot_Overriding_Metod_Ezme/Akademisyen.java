@@ -29,4 +29,8 @@ public class Akademisyen extends Calisan {
         System.out.println("Syn."+unvan+getAdSoyad()+"Lütfen"+bolum+"Dersinize Giriniz.");//**DİKKAT=Fark ettiysek bu sınıfta yaratılan fieldlara doğrudan erişebiliyoruz.
         //Fakat üst sınıftan aldığımız fieldlar encapsule edildiği için onları methot olarak çağırabiliyoruz.Extends etmesek method olarakta çağıramazdık.
     }
+    @Override
+    public void giris(){
+        System.out.println("Akademisyen sınıfından gelen Override: "+this.getAdSoyad()+" Adlı Akademisyen C kasından Giriş Yapmıştır!");
+    }
 }

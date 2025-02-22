@@ -35,11 +35,14 @@ package _008_Metot_Overriding_Metod_Ezme;
             this.email = email;
         }
         public void giris(){
-            System.out.println(adSoyad+"Adlı"+"Personel Sisteme Giriş Yapmıştır.");
+            System.out.println(getAdSoyad()+" Adlı"+" Sisteme Giriş Yapmıştır.");
         }
         //METHOD OVERLOADİNG
         public void giris(String girisSaati){
-            System.out.println(adSoyad+" Adlı"+" Personel "+girisSaati+" Saatinde"+" Sisteme Giriş Yapmıştır.");
+            System.out.println(getAdSoyad()+" Adlı"+"  "+girisSaati+" Saatinde"+" Sisteme Giriş Yapmıştır.");
+        }
+        public void giris(String girisSaati,String cikisSaati){
+            System.out.println(getAdSoyad()+" Adlı"+"  "+girisSaati+" Saatinde"+" Sisteme Giriş Yapmıştır."+" VE "+cikisSaati+"Saatinde Çıkış Yapmıştır.");
         }
         public void cikis(){
             System.out.println(adSoyad+"Adlı"+"Personel Sistemden Çıkış Yapmıştır.");
