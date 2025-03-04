@@ -26,4 +26,5 @@ bin/
 .vscode/
 
 ### Mac OS ###
-.DS_Store
+.DS_Store.idea/
+Patika-Orta_Seviye_Backend_Java_Development.iml
