@@ -12,6 +12,7 @@ public class ToolStore extends NormalLoc{
         boolean showMenu = true;//Bu 'ÇIKIŞ YÖNTEMİ'ni neden kullandık. Çünkü Wile da break komutu sadece kendi içerisinde geçiyor.
         //Biz direk bu methottan çıkmak isteidğimiz için mecbur dışarıda boolean türünde bir değişken yaratıp swichi içinde tersine çevirerek çıktık.
         while (showMenu){
+            System.out.println("Mevcut Bakiyeniz: "+this.getPlayer().getMoney());
             System.out.println("1- Silahlar");
             System.out.println("2- Zırhlar");
             System.out.println("3- Çıkış");
@@ -69,10 +70,12 @@ public class ToolStore extends NormalLoc{
                     System.out.println(selectedWeapon.getName()+" Silahını Satın Aldınız !");
                     int balance=this.getPlayer().getMoney()- selectedWeapon.getPrice();//oyuncunun parasından, seçmiş olduğu silahın parasını çıkarıyoruz.
                     this.getPlayer().setMoney(balance);//burada da güncellemiş oluyoruz.
-                    System.out.println("Kalan Paranız: "+this.getPlayer().getMoney());
+                    System.out.println("İşlem sonucunda Kalan Paranız: "+this.getPlayer().getMoney());
+                    System.out.println("-------------------------------------");
                     System.out.println("Önceki Silahınız: "+ this.getPlayer().getInventory().getWeapon().getName());
                     this.getPlayer().getInventory().setWeapon(selectedWeapon);// Artık Weapon'um benim artık burada seçtiğim weapon olacak
                     System.out.println("Yeni Silahınız: "+ this.getPlayer().getInventory().getWeapon().getName());
+                    System.out.println("-------------------------------------");
 
                 }
             }

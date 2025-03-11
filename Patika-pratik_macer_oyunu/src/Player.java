@@ -47,7 +47,7 @@ public class Player {
         }
         System.out.println("Seçmiş olduğunuz Karakter: "+this.getName()+","+
                 "\t Hasar: "+this.getDamage()+","+
-                "\t Sağlık: " +this.getHealthy()+","+
+                "\t Sağlık: " +this.getHealth()+","+
                 "\t Para: "+this.getMoney());
     }
     //Yeni bir method yaratalım seçilen karakterin özelliklerini getirsin ve bu sınıfta eşleştirsin
@@ -55,7 +55,7 @@ public class Player {
     public void initPlayer(GameChar gameChar){
         this.setName(gameChar.getName());
         this.setDamage(gameChar.getDamage());
-        this.setHealthy(gameChar.getHealth());
+        this.setHealth(gameChar.getHealth());
         this.setMoney(gameChar.getMoney());
     }
 
@@ -64,24 +64,26 @@ public class Player {
                 "Silahınız: " + this.getInventory().getWeapon().getName()+
                         ", Zırh : " + this.getInventory().getArmor().getName()+
                         ", Bloklama: "+this.getInventory().getArmor().getBlock()+
-                        ", Hasarınız: " + this.getDamage()+
-                        ", Sağlık: " + this.getHealthy() +
+                        ", Hasarınız: " + this.getTotalDamage()+
+                        ", Sağlık: " + this.getHealth() +
                         ", Para : " + this.getMoney()
         );
     }
-
-    public int getDamage() {
+    public int getTotalDamage(){
         return damage + this.getInventory().getWeapon().getDamage();
+    }
+    public int getDamage() {
+        return damage;
     }
     public void setDamage(int damage) {
         this.damage = damage;
     }
 
-    public int getHealthy() {
+    public int getHealth() {
         return health;
     }
-    public void setHealthy(int healthy) {
-        this.health = healthy;
+    public void setHealth(int health) {
+        this.health = health;
     }
 
     public int getMoney() {
@@ -112,6 +114,12 @@ public class Player {
     public void setInventory(Inventory inventory) {
         this.inventory = inventory;
     }
+    //------------------------------------------------------------------------------------------
+///Bu kullanım aslında kısaltmayı sağlıyor fakat şuan öğrenme aşamasındayız, uzun halini kullanıp mantığı ve gözümüzü alıştıralım. Sonraki aşama olarak kullan.
+/// BattleLoc' da silahımızın değerini çağırırken. "this.Player().getInventory().getWeapon().getName()" diye uzatmak yerine. "this.Player().getWeapon().getName()" yazmamıza yarıyor.
+//    public Weapon getWeapon(){
+//        return this.getInventory().getWeapon();
+//    }
 }
 
 /*
