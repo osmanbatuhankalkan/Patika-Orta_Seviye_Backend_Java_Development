@@ -4,6 +4,7 @@ public class Player {
 
     private int damage;
     private int health;
+    private int originalHealth;
     private int money;
     private String name;
     private String charName;
@@ -43,7 +44,9 @@ public class Player {
                         initPlayer(new Knight());
                         break;
                         default:
-                            System.out.println("Yanlıs tuslama");
+                            System.out.println("Yanlıs tuslama Tekrar Deneyiniz.Oyun Yeniden Başlatılıyor....");
+                            Game game = new Game();
+                            game.start();
         }
         System.out.println("Seçmiş olduğunuz Karakter: "+this.getName()+","+
                 "\t Hasar: "+this.getDamage()+","+
@@ -56,6 +59,7 @@ public class Player {
         this.setName(gameChar.getName());
         this.setDamage(gameChar.getDamage());
         this.setHealth(gameChar.getHealth());
+        this.setOriginalHealth(gameChar.getHealth());
         this.setMoney(gameChar.getMoney());
     }
 
@@ -83,6 +87,9 @@ public class Player {
         return health;
     }
     public void setHealth(int health) {
+        if(health <0){
+            health = 0;
+        }
         this.health = health;
     }
 
@@ -98,6 +105,14 @@ public class Player {
     }
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getOriginalHealth() {
+        return originalHealth;
+    }
+
+    public void setOriginalHealth(int originalHealth) {
+        this.originalHealth = originalHealth;
     }
 
     public String getCharName() {

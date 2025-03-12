@@ -88,7 +88,7 @@ public abstract class BattleLoc extends Location {//Savas bölgelerinide bağlı
         System.out.println("Para :+"+this.getPlayer().getMoney());
 
         if(this.getPlayer().getInventory().getWeapon().getDamage()>0){
-            System.out.println("Silah : "+this.getPlayer());
+            System.out.println("Silah : "+this.getPlayer().getInventory().getWeapon().getName());
         }
     }
     public void obstacleStats(int i){

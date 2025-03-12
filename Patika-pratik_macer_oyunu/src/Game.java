@@ -26,20 +26,17 @@ public class Game {
             System.out.println("4- Orman -->> Ödül <Odun>, Orman'a Git, Dikkatli ol Vampir Çıkabilir.");
             System.out.println("5- Nehir -->> Ödül <Su>, Nehir'e Git, Dikkatli ol Ayı Çıkabilir.");
                 System.out.println("0- Çıkış Yap -->> Oyunu Sonlandır.");
-
                 System.out.println("Lütfen gitmek istediğiniz bölgeyi seciniz:");
                 int selectLoc = input.nextInt();
+
                 input.nextLine();// <<< Fazladan satırı temizle
                 switch(selectLoc){
-
                     case 0:
                         location=null;
                         break;
-
                     case 1:
                         location = new SafeHouse(player);
                         break;
-
                     case 2:
                         location = new ToolStore(player);
                         break;
@@ -54,20 +51,16 @@ public class Game {
                                 break;
                     default:
                         System.out.println("Lütfen Geçerli Bir Bölge Giriniz !");
-
                 }
                 if(location == null){
                     System.out.println("Oyun Sonlanmıştır. Tekrar Görüşmek Dileğiyle.");
                     break;
                 }
                 //location.onLocation();//location'ın onLocation metodunu çağırabiliyoruz, çünkü hepsine ortak.
-
-            if(!location.onLocation()){
-                System.out.println("Game Over!");
-                break;
+                if(!location.onLocation()){
+                    System.out.println("Game Over!");
+                    break;
             }
         }
-
     }
-
 }
